@@ -44,8 +44,4 @@ export default {
   }),
 };
 </script>
-<style>
-.font {
-  font-family: "Montserrat", sans-serif;
-}
-</style>
+<style></style>
