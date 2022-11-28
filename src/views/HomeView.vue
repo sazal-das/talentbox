@@ -1,5 +1,5 @@
 <template>
-  <hello-world />
+  <hello-world class="font" />
 </template>
 
 <script>
@@ -13,3 +13,8 @@ export default {
   },
 };
 </script>
+<style>
+.font {
+  font-family: "Montserrat", sans-serif;
+}
+</style>

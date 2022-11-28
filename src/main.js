@@ -5,6 +5,8 @@ import router from "./router";
 import store from "./store";
 import vuetify from "./plugins/vuetify";
 
+import "@fontsource/montserrat";
+
 /* import the fontawesome core */
 import { library, dom } from "@fortawesome/fontawesome-svg-core";
 
