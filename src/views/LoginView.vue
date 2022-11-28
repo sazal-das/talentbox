@@ -2,7 +2,7 @@
 <template>
   <div class="page-container">
     <v-row no-gutters>
-      <v-col style="background: white;" cols="12" sm="5" md="5">
+      <v-col style="background: white;" cols="12" sm="12" md="5">
         <div class="left-container">
           <div>
             <img style="width: 120px" src="/images/icon1.png" />
@@ -26,7 +26,7 @@
               <v-carousel-item v-for="(item,i) in items" :key="i" :src="item.src"></v-carousel-item>
             </v-carousel>
           </div>
-          <div style="position: fixed; bottom: 20px;">
+          <div style="position: absolute; bottom: 20px;">
             <v-btn icon color="white" class="mr-5">
               <v-icon>fa-brands fa-twitter</v-icon>
             </v-btn>
@@ -39,10 +39,10 @@
           </div>
         </div>
       </v-col>
-      <v-col cols="12" sm="7" md="7">
+      <v-col cols="12" sm="12" md="7">
         <div class="right-container">
           <div>
-            <v-tabs v-model="tab" align-with-title>
+            <v-tabs v-model="tab" right>
               <v-tabs-slider color="purple"></v-tabs-slider>
 
               <v-tab
@@ -95,13 +95,13 @@
                     </div>
                   </div>
                 </div>
-                <div
-                  class="text-right"
-                  style="position: fixed; bottom: 20px; right: 40px;"
-                >© 2022 Talentbox</div>
               </v-tab-item>
             </v-tabs-items>
           </div>
+          <div
+            class="text-right"
+            style="position: absolute; bottom: 20px; right: 40px;"
+          >© 2022 Talentbox</div>
         </div>
       </v-col>
     </v-row>
@@ -130,6 +130,9 @@ export default {
       valid: true,
     };
   },
+  created() {
+    console.log("vuetify: ", this.$vuetify);
+  },
 };
 </script>
 
@@ -152,6 +155,7 @@ export default {
   background-color: #c0b4e3;
   height: 100vh;
   padding: 30px;
+  position: relative;
 }
 .right-container {
   border-top-left-radius: 60px;
@@ -159,6 +163,7 @@ export default {
   height: 100vh;
   padding: 30px;
   color: black;
+  position: relative;
 }
 .header-text {
   padding: 50px 0;
@@ -186,5 +191,20 @@ export default {
   background-color: white;
   border-radius: 17px;
   padding: 40px 30px;
+}
+.v-window-item .v-image {
+  height: 350px !important;
+  object-fit: contain !important;
+  width: 350px !important;
+  margin: 0 auto !important;
+}
+@media only screen and (max-width: 955px) {
+  .left-container {
+    border-bottom-right-radius: 0px;
+    background-color: #c0b4e3;
+    height: 100vh;
+    padding: 30px;
+    position: relative;
+  }
 }
 </style>
