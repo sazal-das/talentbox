@@ -88,7 +88,10 @@
                         <div class="text-center mt-5">
                           <div>
                             ¿Nuevo en Talentbox?
-                            <a class="purple--text" href>Crear cuenta</a>
+                            <a
+                              class="purple--text"
+                              href="/create-account"
+                            >Crear cuenta</a>
                           </div>
                         </div>
                       </v-form>
@@ -136,7 +139,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped lang="scss">
 .bgColor {
   background-color: #c0b4e3;
 }
@@ -163,7 +166,7 @@ export default {
   height: 100vh;
   padding: 30px;
   color: black;
-  position: relative;
+  /* position: relative; */
 }
 .header-text {
   padding: 50px 0;
@@ -192,11 +195,13 @@ export default {
   border-radius: 17px;
   padding: 40px 30px;
 }
-.v-window-item .v-image {
-  height: 350px !important;
-  object-fit: contain !important;
-  width: 350px !important;
-  margin: 0 auto !important;
+::v-deep {
+  .v-window-item .v-image {
+    height: 350px !important;
+    object-fit: contain !important;
+    width: 350px !important;
+    margin: 0 auto !important;
+  }
 }
 @media only screen and (max-width: 955px) {
   .left-container {
