@@ -13,7 +13,7 @@
             </div>
             <div class="text-center mt-3">Foto de perfil</div>
           </v-col>
-          <v-col cols="8" sm="9" md="10" :class="$vuetify.breakpoint.xs ? 'px-0' : 'pr-0'">
+          <v-col cols="8" sm="9" md="10" :class="$vuetify.breakpoint.xs ? 'pl-2' : 'pr-0'">
             <v-textarea
               hide-details
               v-model="form.economic"

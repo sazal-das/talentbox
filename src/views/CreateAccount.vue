@@ -1,188 +1,208 @@
 <!-- eslint-disable prettier/prettier -->
 <template>
-  <div class="page-container">
-    <v-row no-gutters>
-      <v-col style="background: white;" cols="12" sm="12" md="5">
-        <div class="left-container">
-          <div>
-            <img style="width: 120px" src="/images/icon1.png" />
-            <img style="width: 55px; margin-left: -8px" src="/images/icon2.png" />
-          </div>
-          <div class="header-text pl-5">
-            <div v-if="(step===1 || step===2)">
-              <div
-                :class="$vuetify.breakpoint.width < 500 ? 'text-h5' : 'text-h4'"
-              >Imagina un asistente</div>
-              <div
-                :class="$vuetify.breakpoint.width < 500 ? 'text-h5' : 'text-h4'"
-              >personal trabajando 24/7</div>
+  <div>
+    <div class="page-container">
+      <v-row no-gutters>
+        <v-col style="background: white;" cols="12" sm="12" md="5">
+          <div class="left-container">
+            <div>
+              <img style="width: 120px" src="/images/icon1.png" />
+              <img style="width: 55px; margin-left: -8px" src="/images/icon2.png" />
             </div>
-            <div v-else-if="(step===3 || step===4 || step===9 || step===10)">
-              <div
-                :class="$vuetify.breakpoint.width < 500 ? 'text-h5' : 'text-h4'"
-              >Déjanos ayudarte a</div>
-              <div
-                :class="$vuetify.breakpoint.width < 500 ? 'text-h5' : 'text-h4'"
-              >encontrar el trabajo</div>
-            </div>
-            <div v-else-if="(step===5 || step===6)">
-              <div
-                :class="$vuetify.breakpoint.width < 500 ? 'text-h5' : 'text-h4'"
-              >Ordenamos tu perfil</div>
-              <div
-                :class="$vuetify.breakpoint.width < 500 ? 'text-h5' : 'text-h4'"
-              >tomando en cuenta</div>
-              <div
-                :class="$vuetify.breakpoint.width < 500 ? 'text-h5' : 'text-h4'"
-              >habilidades técnicas</div>
-            </div>
-            <div v-else-if="(step===7 || step===8)">
-              <div
-                :class="$vuetify.breakpoint.width < 500 ? 'text-h5' : 'text-h4'"
-              >¡Encuentra tu trabajo</div>
-              <div :class="$vuetify.breakpoint.width < 500 ? 'text-h5' : 'text-h4'">soñado!</div>
-            </div>
-          </div>
-          <div>
-            <v-img
-              v-if="step===1 || step===2"
-              class="mx-auto"
-              max-width="440"
-              src="/images/image2.png"
-            ></v-img>
-            <v-img
-              v-else-if="(step===3 || step===4 || step===9 || step===10)"
-              class="mx-auto"
-              max-width="440"
-              src="/images/image3.png"
-            ></v-img>
-            <v-img
-              v-else-if="(step===5 || step===6)"
-              class="mx-auto"
-              max-width="440"
-              src="/images/image4.png"
-            ></v-img>
-            <v-img
-              v-else-if="(step===7 || step===8)"
-              class="mx-auto"
-              max-width="440"
-              src="/images/image1.png"
-            ></v-img>
-          </div>
-          <div style="position: absolute; bottom: 20px;">
-            <v-btn icon color="white" class="mr-5">
-              <v-icon>fa-brands fa-twitter</v-icon>
-            </v-btn>
-            <v-btn icon color="white" class="mr-5">
-              <v-icon>fa-brands fa-instagram</v-icon>
-            </v-btn>
-            <v-btn icon color="white">
-              <v-icon>fa-brands fa-facebook-f</v-icon>
-            </v-btn>
-          </div>
-        </div>
-      </v-col>
-      <v-col cols="12" sm="12" md="7">
-        <div class="right-container">
-          <div>
-            <v-tabs v-model="tab" right>
-              <v-tabs-slider color="purple"></v-tabs-slider>
-
-              <v-tab
-                class="text-capitalize black--text"
-                v-for="item in tabItems"
-                :key="item"
-              >{{ item }}</v-tab>
-            </v-tabs>
-            <v-tabs-items v-model="tab">
-              <v-tab-item v-for="item in items" :key="item">
-                <div class="form-container">
-                  <step-one v-if="step===1" />
-                  <StepTwo v-if="step===2" />
-                  <StepThree v-if="step===3" />
-                  <StepFour v-if="(step===4)" />
-                  <StepFive v-if="(step===5)" />
-                  <StepSix v-if="(step===6)" />
-                  <StepSeven v-if="(step===7)" />
-                  <StepEight v-if="(step===8)" />
-                  <StepNine v-if="(step===9)" />
-                  <StepTen v-if="(step===10)" />
-                </div>
-              </v-tab-item>
-            </v-tabs-items>
-          </div>
-          <!-- Bottom Section -->
-          <div style="position: absolute; left: 40px; right: 40px; bottom: 20px;">
-            <div class="mb-8">
-              <v-progress-linear
-                style="box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; border-radius: 20px;"
-                height="15"
-                rounded
-                :color="progressValue===0 ? 'blue-grey lighten-5' : 'purple darken-2'"
-                :value="progressValue"
-              >
-                <template v-slot:default="{ value }">
-                  <span class="text-caption white--text">{{ Math.ceil(value) }}%</span>
-                </template>
-              </v-progress-linear>
-            </div>
-            <div v-if="$vuetify.breakpoint.xs" class="text-center">
-              <div>
-                <v-btn
-                  depressed
-                  rounded
-                  color="purple"
-                  class="text-capitalize px-13 py-6 font-weight-bold btn-bg"
-                  dark
-                >Siguiente</v-btn>
+            <div class="header-text pl-5">
+              <div v-if="(step===1 || step===2)">
+                <div
+                  :class="$vuetify.breakpoint.width < 500 ? 'text-h5' : 'text-h4'"
+                >Imagina un asistente</div>
+                <div
+                  :class="$vuetify.breakpoint.width < 500 ? 'text-h5' : 'text-h4'"
+                >personal trabajando 24/7</div>
               </div>
-              <div class="mt-4">
+              <div v-else-if="(step===3 || step===4 || step===9 || step===10)">
+                <div
+                  :class="$vuetify.breakpoint.width < 500 ? 'text-h5' : 'text-h4'"
+                >Déjanos ayudarte a</div>
+                <div
+                  :class="$vuetify.breakpoint.width < 500 ? 'text-h5' : 'text-h4'"
+                >encontrar el trabajo</div>
+              </div>
+              <div v-else-if="(step===5 || step===6)">
+                <div
+                  :class="$vuetify.breakpoint.width < 500 ? 'text-h5' : 'text-h4'"
+                >Ordenamos tu perfil</div>
+                <div
+                  :class="$vuetify.breakpoint.width < 500 ? 'text-h5' : 'text-h4'"
+                >tomando en cuenta</div>
+                <div
+                  :class="$vuetify.breakpoint.width < 500 ? 'text-h5' : 'text-h4'"
+                >habilidades técnicas</div>
+              </div>
+              <div v-else-if="(step===7 || step===8)">
+                <div
+                  :class="$vuetify.breakpoint.width < 500 ? 'text-h5' : 'text-h4'"
+                >¡Encuentra tu trabajo</div>
+                <div :class="$vuetify.breakpoint.width < 500 ? 'text-h5' : 'text-h4'">soñado!</div>
+              </div>
+            </div>
+            <div>
+              <v-img
+                v-if="step===1 || step===2"
+                class="mx-auto"
+                max-width="440"
+                src="/images/image2.png"
+              ></v-img>
+              <v-img
+                v-else-if="(step===3 || step===4 || step===9 || step===10)"
+                class="mx-auto"
+                max-width="440"
+                src="/images/image3.png"
+              ></v-img>
+              <v-img
+                v-else-if="(step===5 || step===6)"
+                class="mx-auto"
+                max-width="440"
+                src="/images/image4.png"
+              ></v-img>
+              <v-img
+                v-else-if="(step===7 || step===8)"
+                class="mx-auto"
+                max-width="440"
+                src="/images/image1.png"
+              ></v-img>
+            </div>
+            <div style="position: absolute; bottom: 20px;">
+              <v-btn icon color="white" class="mr-5">
+                <v-icon>fa-brands fa-twitter</v-icon>
+              </v-btn>
+              <v-btn icon color="white" class="mr-5">
+                <v-icon>fa-brands fa-instagram</v-icon>
+              </v-btn>
+              <v-btn icon color="white">
+                <v-icon>fa-brands fa-facebook-f</v-icon>
+              </v-btn>
+            </div>
+          </div>
+        </v-col>
+        <v-col cols="12" sm="12" md="7">
+          <div class="right-container">
+            <div>
+              <v-tabs v-model="tab" right>
+                <v-tabs-slider color="purple"></v-tabs-slider>
+
+                <v-tab
+                  class="text-capitalize black--text"
+                  v-for="item in tabItems"
+                  :key="item"
+                >{{ item }}</v-tab>
+              </v-tabs>
+              <v-tabs-items v-model="tab">
+                <v-tab-item v-for="item in items" :key="item">
+                  <div class="form-container">
+                    <step-one v-if="step===1" />
+                    <StepTwo v-if="step===2" />
+                    <StepThree v-if="step===3" />
+                    <StepFour v-if="(step===4)" />
+                    <StepFive v-if="(step===5)" />
+                    <StepSix v-if="(step===6)" />
+                    <StepSeven v-if="(step===7)" />
+                    <StepEight v-if="(step===8)" />
+                    <StepNine v-if="(step===9)" />
+                    <StepTen v-if="(step===10)" />
+                  </div>
+                </v-tab-item>
+              </v-tabs-items>
+            </div>
+            <!-- Bottom Section -->
+            <div
+              :style="$vuetify.breakpoint.width > 960 ? 'position: absolute; left: 40px; right: 40px; bottom: 20px;' : 'padding-bottom: 15px'"
+              class="pt-5"
+            >
+              <div class="mb-8">
+                <v-progress-linear
+                  style="box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; border-radius: 20px;"
+                  height="15"
+                  rounded
+                  :color="progressValue===0 ? 'blue-grey lighten-5' : 'purple darken-2'"
+                  :value="progressValue"
+                >
+                  <template v-slot:default="{ value }">
+                    <span class="text-caption white--text">{{ Math.ceil(value) }}%</span>
+                  </template>
+                </v-progress-linear>
+              </div>
+              <div v-if="$vuetify.breakpoint.xs" class="text-center">
+                <div>
+                  <v-btn
+                    depressed
+                    rounded
+                    color="purple"
+                    class="text-capitalize px-13 py-6 font-weight-bold btn-bg"
+                    dark
+                    v-if="step<10"
+                    @click="onClickNext()"
+                  >Siguiente</v-btn>
+                  <div
+                    v-if="(step>1)"
+                    style="margin-top: 15px; color: #565656"
+                  >Probabilidad de match con ofertas {{progressValue}}%</div>
+                  <v-btn
+                    depressed
+                    rounded
+                    color="purple"
+                    class="text-capitalize px-15 py-6 font-weight-bold btn-bg"
+                    dark
+                    v-if="step===10"
+                  >Guardar</v-btn>
+                </div>
+                <div class="mt-4">
+                  <v-btn
+                    depressed
+                    rounded
+                    outlined
+                    color="purple"
+                    class="text-capitalize px-16 py-6 font-weight-bold"
+                    dark
+                    @click="onClickBack()"
+                  >Volver</v-btn>
+                </div>
+              </div>
+              <div v-else class="d-flex justify-space-between" style="width: 100%">
                 <v-btn
                   depressed
                   rounded
                   outlined
                   color="purple"
-                  class="text-capitalize px-16 py-6 font-weight-bold"
+                  class="text-capitalize px-15 py-6 font-weight-bold"
                   dark
+                  @click="onClickBack()"
                 >Volver</v-btn>
+                <div
+                  v-if="(step>1)"
+                  style="margin-top: 15px; color: #565656"
+                >Probabilidad de match con ofertas {{progressValue}}%</div>
+                <v-btn
+                  depressed
+                  rounded
+                  color="purple"
+                  class="text-capitalize px-15 py-6 font-weight-bold btn-bg"
+                  dark
+                  v-if="step<10"
+                  @click="onClickNext()"
+                >Siguiente</v-btn>
+                <v-btn
+                  depressed
+                  rounded
+                  color="purple"
+                  class="text-capitalize px-15 py-6 font-weight-bold btn-bg"
+                  dark
+                  v-if="step===10"
+                >Guardar</v-btn>
               </div>
             </div>
-            <div v-else class="d-flex justify-space-between" style="width: 100%">
-              <v-btn
-                depressed
-                rounded
-                outlined
-                color="purple"
-                class="text-capitalize px-15 py-6 font-weight-bold"
-                dark
-                @click="onClickBack()"
-              >Volver</v-btn>
-              <div
-                v-if="(step>1)"
-                style="margin-top: 15px; color: #565656"
-              >Probabilidad de match con ofertas {{progressValue}}%</div>
-              <v-btn
-                depressed
-                rounded
-                color="purple"
-                class="text-capitalize px-15 py-6 font-weight-bold btn-bg"
-                dark
-                v-if="step<10"
-                @click="onClickNext()"
-              >Siguiente</v-btn>
-              <v-btn
-                depressed
-                rounded
-                color="purple"
-                class="text-capitalize px-15 py-6 font-weight-bold btn-bg"
-                dark
-                v-if="step===10"
-              >Guardar</v-btn>
-            </div>
           </div>
-        </div>
-      </v-col>
-    </v-row>
+        </v-col>
+      </v-row>
+    </div>
   </div>
 </template>
 
@@ -262,7 +282,6 @@ export default {
   font-family: "Montserrat", sans-serif;
   height: 100vh;
   color: white;
-  /* padding: 30px; */
 }
 .left-container {
   border-bottom-right-radius: 60px;
@@ -318,6 +337,12 @@ export default {
     padding: 30px;
     position: relative;
   }
+  .page-container {
+    background-color: #c0b4e3;
+    font-family: "Montserrat", sans-serif;
+    height: max-content;
+    color: white;
+  }
 }
 @media only screen and (max-width: 500px) {
   .left-container {
@@ -330,6 +355,12 @@ export default {
   .header-text {
     padding-top: 80px;
     padding-bottom: 80px;
+  }
+  .page-container {
+    background-color: #c0b4e3;
+    font-family: "Montserrat", sans-serif;
+    height: max-content;
+    color: white;
   }
 }
 </style>
