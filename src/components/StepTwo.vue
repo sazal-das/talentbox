@@ -79,9 +79,19 @@
                 </div>
               </v-col>
             </v-row>
-            <div class="mt-2">
-              <v-chip class="mx-1" color="#ECE4F0" close>Cargo01</v-chip>
-              <v-chip class="mx-1" color="#ECE4F0" close>Cargo02</v-chip>
+            <div class="mt-2 d-flex">
+              <div class="chip-style d-flex mr-2">
+                <div class="pt-1">Cargo01</div>
+                <v-btn class="ml-3 mt-1" x-small icon color="#8000c7">
+                  <v-icon>fa-solid fa-xmark</v-icon>
+                </v-btn>
+              </div>
+              <div class="chip-style d-flex mr-2">
+                <div class="pt-1">Cargo02</div>
+                <v-btn class="ml-3 mt-1" x-small icon color="#8000c7">
+                  <v-icon>fa-solid fa-xmark</v-icon>
+                </v-btn>
+              </div>
             </div>
           </v-col>
           <v-col cols="12" sm="6" :class="$vuetify.breakpoint.xs ? 'px-0' : 'pl-0'">
@@ -102,9 +112,19 @@
                 </div>
               </v-col>
             </v-row>
-            <div class="mt-2">
-              <v-chip class="mx-1" color="#ECE4F0" close>Habilidad01</v-chip>
-              <v-chip class="mx-1" color="#ECE4F0" close>Habilidad02</v-chip>
+            <div class="mt-2 d-flex">
+              <div class="chip-style d-flex mr-2">
+                <div class="pt-1">Habilidad01</div>
+                <v-btn class="ml-3 mt-1" x-small icon color="#8000c7">
+                  <v-icon>fa-solid fa-xmark</v-icon>
+                </v-btn>
+              </div>
+              <div class="chip-style d-flex mr-2">
+                <div class="pt-1">Habilidad02</div>
+                <v-btn class="ml-3 mt-1" x-small icon color="#8000c7">
+                  <v-icon>fa-solid fa-xmark</v-icon>
+                </v-btn>
+              </div>
             </div>
           </v-col>
         </v-row>
@@ -165,6 +185,15 @@ export default {
 .add-btn {
   border: 1px dashed #9e9e9e;
   padding: 20px;
+  text-align: center;
   border-radius: 5px;
+}
+.chip-style {
+  background-color: #efe9f3;
+  color: #7e7085;
+  border-radius: 50px;
+  padding: 5px 20px;
+  font-weight: bold;
+  width: max-content;
 }
 </style>

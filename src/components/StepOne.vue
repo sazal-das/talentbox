@@ -84,4 +84,12 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped lang="scss">
+::v-deep {
+  .v-text-field.v-text-field--solo:not(.v-text-field--solo-flat)
+    > .v-input__control
+    > .v-input__slot {
+    padding: 20px 10px;
+  }
+}
+</style>

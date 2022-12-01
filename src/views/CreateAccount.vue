@@ -107,6 +107,10 @@
                 dark
                 @click="onClickBack()"
               >Volver</v-btn>
+              <div
+                v-if="(step>1)"
+                style="margin-top: 15px; color: #565656"
+              >Probabilidad de match con ofertas {{progressValue}}%</div>
               <v-btn
                 depressed
                 rounded
