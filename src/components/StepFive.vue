@@ -101,12 +101,10 @@
               </v-row>
             </div>
             <div class="text-right mt-6">
-              <v-btn
-                elevation="2"
-                color="white"
-                class="text-capitalize px-4 py-2"
-                rounded
-              >Añadir más experiencia</v-btn>
+              <v-btn elevation="2" color="white" class="text-capitalize px-4 py-2" rounded>
+                Añadir más experiencia
+                <v-icon color="purple" right dark>mdi-plus</v-icon>
+              </v-btn>
             </div>
           </v-col>
         </v-row>
