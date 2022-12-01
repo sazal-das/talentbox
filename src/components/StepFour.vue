@@ -15,7 +15,7 @@
             ></v-text-field>
           </v-col>
         </v-row>
-        <div class="text-body-1 pb-4">¿Tiene empleo actualmente?</div>
+        <div class="text-body-1 mt-4">¿Tiene empleo actualmente?</div>
         <v-row class="pb-4">
           <v-col cols="12" sm="6" :class="$vuetify.breakpoint.xs ? 'px-0' : 'pl-0'">
             <div class="mt-5 d-flex">
@@ -68,9 +68,19 @@
                 </div>
               </v-col>
             </v-row>
-            <div class="mt-2">
-              <v-chip class="mx-1" color="#ECE4F0" close>Lugar01</v-chip>
-              <v-chip class="mx-1" color="#ECE4F0" close>Lugar02</v-chip>
+            <div class="mt-2 d-flex">
+              <div class="chip-style d-flex mr-2">
+                <div class="pt-1">Lugar01</div>
+                <v-btn class="ml-3 mt-1" x-small icon color="#8000c7">
+                  <v-icon>fa-solid fa-xmark</v-icon>
+                </v-btn>
+              </div>
+              <div class="chip-style d-flex mr-2">
+                <div class="pt-1">Lugar02</div>
+                <v-btn class="ml-3 mt-1" x-small icon color="#8000c7">
+                  <v-icon>fa-solid fa-xmark</v-icon>
+                </v-btn>
+              </div>
             </div>
           </v-col>
           <v-col cols="12" sm="6" :class="$vuetify.breakpoint.xs ? 'px-0' : 'pl-0'">
@@ -128,7 +138,7 @@
                   </v-col>
                   <v-col cols="6" class="d-flex justify-space-between">
                     <div>
-                      <div class="pt-1">B1</div>
+                      <div class="pt-1">A1</div>
                     </div>
                     <v-btn icon color="#8000c7">
                       <v-icon>fa-solid fa-xmark</v-icon>
@@ -198,6 +208,7 @@ export default {
   border: 1px dashed #9e9e9e;
   padding: 20px;
   border-radius: 5px;
+  text-align: center;
 }
 .yes-or-no-active {
   padding: 10px;

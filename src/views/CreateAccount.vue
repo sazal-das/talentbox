@@ -9,15 +9,65 @@
             <img style="width: 55px; margin-left: -8px" src="/images/icon2.png" />
           </div>
           <div class="header-text pl-5">
-            <div
-              :class="$vuetify.breakpoint.width < 500 ? 'text-h5' : 'text-h4'"
-            >Imagina un asistente</div>
-            <div
-              :class="$vuetify.breakpoint.width < 500 ? 'text-h5' : 'text-h4'"
-            >personal trabajando 24/7</div>
+            <div v-if="(step===1 || step===2)">
+              <div
+                :class="$vuetify.breakpoint.width < 500 ? 'text-h5' : 'text-h4'"
+              >Imagina un asistente</div>
+              <div
+                :class="$vuetify.breakpoint.width < 500 ? 'text-h5' : 'text-h4'"
+              >personal trabajando 24/7</div>
+            </div>
+            <div v-else-if="(step===3 || step===4 || step===9 || step===10)">
+              <div
+                :class="$vuetify.breakpoint.width < 500 ? 'text-h5' : 'text-h4'"
+              >Déjanos ayudarte a</div>
+              <div
+                :class="$vuetify.breakpoint.width < 500 ? 'text-h5' : 'text-h4'"
+              >encontrar el trabajo</div>
+            </div>
+            <div v-else-if="(step===5 || step===6)">
+              <div
+                :class="$vuetify.breakpoint.width < 500 ? 'text-h5' : 'text-h4'"
+              >Ordenamos tu perfil</div>
+              <div
+                :class="$vuetify.breakpoint.width < 500 ? 'text-h5' : 'text-h4'"
+              >tomando en cuenta</div>
+              <div
+                :class="$vuetify.breakpoint.width < 500 ? 'text-h5' : 'text-h4'"
+              >habilidades técnicas</div>
+            </div>
+            <div v-else-if="(step===7 || step===8)">
+              <div
+                :class="$vuetify.breakpoint.width < 500 ? 'text-h5' : 'text-h4'"
+              >¡Encuentra tu trabajo</div>
+              <div :class="$vuetify.breakpoint.width < 500 ? 'text-h5' : 'text-h4'">soñado!</div>
+            </div>
           </div>
           <div>
-            <v-img class="mx-auto" max-width="440" src="/images/image2.png"></v-img>
+            <v-img
+              v-if="step===1 || step===2"
+              class="mx-auto"
+              max-width="440"
+              src="/images/image2.png"
+            ></v-img>
+            <v-img
+              v-else-if="(step===3 || step===4 || step===9 || step===10)"
+              class="mx-auto"
+              max-width="440"
+              src="/images/image3.png"
+            ></v-img>
+            <v-img
+              v-else-if="(step===5 || step===6)"
+              class="mx-auto"
+              max-width="440"
+              src="/images/image4.png"
+            ></v-img>
+            <v-img
+              v-else-if="(step===7 || step===8)"
+              class="mx-auto"
+              max-width="440"
+              src="/images/image1.png"
+            ></v-img>
           </div>
           <div style="position: absolute; bottom: 20px;">
             <v-btn icon color="white" class="mr-5">
