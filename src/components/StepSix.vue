@@ -118,6 +118,7 @@
                 color="white"
                 class="text-capitalize px-4 py-2 font-weight-bold"
                 rounded
+                @click="dialog=true"
               >
                 Añadir más experiencia
                 <v-icon color="purple" right dark>mdi-plus</v-icon>
@@ -127,6 +128,51 @@
         </v-row>
       </v-form>
     </div>
+    <v-dialog v-model="dialog" width="600" style="border-radius: 15px">
+      <v-card class="dialog-container">
+        <div>
+          <div class="d-flex justify-space-between">
+            <div></div>
+            <div>Mi experiencia</div>
+            <div>
+              <v-btn small icon color="purple" @click="dialog=false">
+                <v-icon>mdi-close</v-icon>
+              </v-btn>
+            </div>
+          </div>
+          <div class="mt-3 inner-container">
+            <div class="inner-content">
+              <div class="text-right">
+                <v-btn
+                  style="border: 1px solid #EAEAEA; border-radius: 5px"
+                  x-small
+                  outlined
+                  tile
+                  icon
+                  color="#565656"
+                >
+                  <v-icon>mdi-pencil</v-icon>
+                </v-btn>
+                <v-btn
+                  style="border: 1px solid #EAEAEA; border-radius: 5px"
+                  class="ml-2"
+                  x-small
+                  outlined
+                  tile
+                  icon
+                  color="#565656"
+                >
+                  <v-icon>mdi-close</v-icon>
+                </v-btn>
+              </div>
+              <div>Arquitecto junior</div>
+              <div>AECOM</div>
+              <div>Nov 2019 - Feb 2020</div>
+            </div>
+          </div>
+        </div>
+      </v-card>
+    </v-dialog>
   </div>
 </template>
 
@@ -144,12 +190,30 @@ export default {
         level: "",
         abilities: "",
       },
+      dialog: false,
     };
   },
 };
 </script>
 
 <style scoped lang="scss">
+.dialog-container {
+  padding: 10px;
+  background-color: #faf8fb;
+  border-radius: 15px;
+}
+.inner-container {
+  padding: 10px;
+  background-color: white;
+  border-radius: 15px;
+  height: 400px;
+}
+.inner-content {
+  border: 1px solid #f1f1f1;
+  border-radius: 10px;
+  padding: 10px;
+  width: 70%;
+}
 ::v-deep {
   .v-text-field.v-text-field--solo:not(.v-text-field--solo-flat)
     > .v-input__control
