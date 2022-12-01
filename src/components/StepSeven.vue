@@ -1,37 +1,17 @@
 <!-- eslint-disable prettier/prettier -->
 <template>
   <div>
-    <div class="text-h6 font-weight-light">Experiencia</div>
+    <div class="text-h6 font-weight-light">Formación académica</div>
     <div class="mt-8">
       <v-form ref="form" v-model="valid" lazy-validation>
-        <v-row class="pb-4">
-          <v-col cols="12" sm="6" :class="$vuetify.breakpoint.xs ? 'px-0' : 'pl-0'">
-            <v-text-field
-              hide-details
-              color="purple"
-              label="Empresa"
-              outlined
-              v-model="form.company"
-            ></v-text-field>
-          </v-col>
-          <v-col cols="12" sm="6" :class="$vuetify.breakpoint.xs ? 'px-0' : 'pr-0'">
-            <v-text-field
-              hide-details
-              color="purple"
-              label="Lugar de trabajo"
-              outlined
-              v-model="form.workplace"
-            ></v-text-field>
-          </v-col>
-        </v-row>
         <v-row class="pb-4">
           <v-col cols="12" sm="6" :class="$vuetify.breakpoint.xs ? 'px-0' : 'pl-0'">
             <v-select
               hide-details
               color="purple"
-              v-model="form.economic"
+              v-model="form.academicLevel"
               :items="items"
-              label="Sector económico"
+              label="Nivel académico"
               outlined
             ></v-select>
           </v-col>
@@ -39,38 +19,36 @@
             <v-text-field
               hide-details
               color="purple"
-              label="Título del cargo"
+              label="Título obtenido"
               outlined
-              v-model="form.jobTitle"
+              v-model="form.obtainedTitle"
             ></v-text-field>
           </v-col>
         </v-row>
         <v-row class="pb-4">
           <v-col cols="12" sm="6" :class="$vuetify.breakpoint.xs ? 'px-0' : 'pl-0'">
-            <v-textarea
-              hide-details
-              v-model="form.economic"
-              color="purple"
-              outlined
-              name="input-7-4"
-              label="Descripción"
-            ></v-textarea>
-          </v-col>
-          <v-col cols="12" sm="6" :class="$vuetify.breakpoint.xs ? 'px-0' : 'pr-0'">
             <v-text-field
               hide-details
               color="purple"
-              label="Rango / Jerarquía"
+              label="Institución"
               outlined
-              v-model="form.jobTitle"
+              v-model="form.institution"
             ></v-text-field>
-            <div class="add-input mt-2">
-              <div style="color: #666666;">Salario actual o último salario</div>
-              <div class="mt-1">
-                <v-text-field prefix="$" dense hide-details color="purple" v-model="form.place"></v-text-field>
-              </div>
-            </div>
-            <div class="dollar-input mt-2">
+          </v-col>
+          <v-col cols="12" sm="6" :class="$vuetify.breakpoint.xs ? 'px-0' : 'pr-0'">
+            <v-select
+              hide-details
+              color="purple"
+              v-model="form.metodología"
+              :items="items"
+              label="Metodología"
+              outlined
+            ></v-select>
+          </v-col>
+        </v-row>
+        <v-row class="pb-4">
+          <v-col cols="12" sm="6" :class="$vuetify.breakpoint.xs ? 'px-0' : 'pl-0'">
+            <div class="dollar-input">
               <div class="d-flex justify-space-between">
                 <div style="color: #666666;">Fechas</div>
               </div>
@@ -83,7 +61,7 @@
                     prefix="Fec"
                     hide-details
                     color="purple"
-                    v-model="form.minSalary"
+                    v-model="form.initial"
                   ></v-text-field>
                 </v-col>
                 <v-divider inset vertical></v-divider>
@@ -95,25 +73,25 @@
                     prefix="Fec"
                     hide-details
                     color="purple"
-                    v-model="form.maxSalary"
+                    v-model="form.final"
                   ></v-text-field>
                 </v-col>
               </v-row>
             </div>
-            <div class="text-right mt-6">
-              <v-btn
-                large
-                elevation="2"
-                color="white"
-                class="text-capitalize px-4 py-2 font-weight-bold"
-                rounded
-              >
-                Añadir más experiencia
-                <v-icon color="purple" right dark>mdi-plus</v-icon>
-              </v-btn>
-            </div>
           </v-col>
         </v-row>
+        <div class="text-right mt-4">
+          <v-btn
+            large
+            elevation="2"
+            color="white"
+            class="text-capitalize px-4 py-2 font-weight-bold"
+            rounded
+          >
+            Añadir más estudios
+            <v-icon color="purple" right dark>mdi-plus</v-icon>
+          </v-btn>
+        </div>
       </v-form>
     </div>
   </div>
@@ -126,12 +104,12 @@ export default {
       haveJob: "yes",
       items: ["Foo", "Bar", "Fizz", "Buzz"],
       form: {
-        company: "",
-        workplace: "",
-        economic: "",
-        jobTitle: "",
-        level: "",
-        abilities: "",
+        academicLevel: "",
+        obtainedTitle: "",
+        institution: "",
+        metodología: "",
+        initial: "",
+        final: "",
       },
     };
   },

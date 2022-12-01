@@ -52,6 +52,10 @@
                   <StepThree v-if="step===3" />
                   <StepFour v-if="(step===4)" />
                   <StepFive v-if="(step===5)" />
+                  <StepSix v-if="(step===6)" />
+                  <StepSeven v-if="(step===7)" />
+                  <StepEight v-if="(step===8)" />
+                  <StepNine v-if="(step===9)" />
                 </div>
               </v-tab-item>
             </v-tabs-items>
@@ -124,6 +128,10 @@ import StepThree from "../components/StepThree.vue";
 import StepTwo from "../components/StepTwo.vue";
 import StepFour from "../components/StepFour.vue";
 import StepFive from "../components/StepFive.vue";
+import StepSix from "../components/StepSix.vue";
+import StepSeven from "../components/StepSeven.vue";
+import StepEight from "../components/StepEight.vue";
+import StepNine from "../components/StepNine.vue";
 export default {
   name: "CreateAccount",
   data() {
@@ -153,6 +161,10 @@ export default {
     StepTwo,
     StepFour,
     StepFive,
+    StepSeven,
+    StepSix,
+    StepEight,
+    StepNine,
   },
   created() {
     console.log("vuetify: ", this.$vuetify);

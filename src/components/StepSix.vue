@@ -1,7 +1,18 @@
 <!-- eslint-disable prettier/prettier -->
 <template>
   <div>
-    <div class="text-h6 font-weight-light">Experiencia</div>
+    <div class="d-flex justify-space-between">
+      <div class="text-h6 font-weight-light">Experiencia</div>
+      <div>
+        <v-btn
+          large
+          elevation="2"
+          color="white"
+          class="text-capitalize px-6 py-2 font-weight-bold"
+          rounded
+        >Ver experiencia</v-btn>
+      </div>
+    </div>
     <div class="mt-8">
       <v-form ref="form" v-model="valid" lazy-validation>
         <v-row class="pb-4">
