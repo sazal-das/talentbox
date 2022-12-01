@@ -56,6 +56,7 @@
                   <StepSeven v-if="(step===7)" />
                   <StepEight v-if="(step===8)" />
                   <StepNine v-if="(step===9)" />
+                  <StepTen v-if="(step===10)" />
                 </div>
               </v-tab-item>
             </v-tabs-items>
@@ -112,8 +113,17 @@
                 color="purple"
                 class="text-capitalize px-15 py-6 font-weight-bold btn-bg"
                 dark
+                v-if="step<10"
                 @click="onClickNext()"
               >Siguiente</v-btn>
+              <v-btn
+                depressed
+                rounded
+                color="purple"
+                class="text-capitalize px-15 py-6 font-weight-bold btn-bg"
+                dark
+                v-if="step===10"
+              >Guardar</v-btn>
             </div>
           </div>
         </div>
@@ -132,6 +142,7 @@ import StepSix from "../components/StepSix.vue";
 import StepSeven from "../components/StepSeven.vue";
 import StepEight from "../components/StepEight.vue";
 import StepNine from "../components/StepNine.vue";
+import StepTen from "../components/StepTen.vue";
 export default {
   name: "CreateAccount",
   data() {
@@ -165,6 +176,7 @@ export default {
     StepSix,
     StepEight,
     StepNine,
+    StepTen,
   },
   created() {
     console.log("vuetify: ", this.$vuetify);
