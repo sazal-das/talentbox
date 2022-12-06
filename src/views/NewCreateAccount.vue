@@ -302,4 +302,14 @@ export default {
   margin: 0 auto;
   margin-top: 80px;
 }
+@media only screen and (max-width: 576px) {
+  .right-container {
+    border-top-left-radius: 60px;
+    background-color: white;
+    min-height: 990px;
+    padding: 20px;
+    color: black;
+    position: relative;
+  }
+}
 </style>

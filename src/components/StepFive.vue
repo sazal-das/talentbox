@@ -261,7 +261,9 @@ export default {
   background-color: #efe9f3;
   color: #7e7085;
   border-radius: 50px;
-  padding: 5px 20px;
+  padding: 5px 10px;
+  font-size: 12px;
   font-weight: bold;
+  width: max-content;
 }
 </style>

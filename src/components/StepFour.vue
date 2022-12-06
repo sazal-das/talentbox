@@ -69,7 +69,9 @@
               </v-col>
             </v-row>
             <div class="mt-2 d-flex">
-              <div class="chip-style d-flex mr-2">
+              <v-chip color="#efe9f3" class="overflow-x-auto mb-3 mr-1" close>Lugar01</v-chip>
+              <v-chip color="#efe9f3" class="overflow-x-auto mb-3" close>Lugar02</v-chip>
+              <!-- <div class="chip-style d-flex mr-2">
                 <div class="pt-1">Lugar01</div>
                 <v-btn class="ml-3 mt-1" x-small icon color="#8000c7">
                   <v-icon>fa-solid fa-xmark</v-icon>
@@ -80,7 +82,7 @@
                 <v-btn class="ml-3 mt-1" x-small icon color="#8000c7">
                   <v-icon>fa-solid fa-xmark</v-icon>
                 </v-btn>
-              </div>
+              </div>-->
             </div>
           </v-col>
           <v-col cols="12" sm="6" :class="$vuetify.breakpoint.xs ? 'px-0' : 'pl-0'">
@@ -110,13 +112,30 @@
               </v-col>
             </v-row>
             <div class="mt-4">
-              <div class="chip-style">
+              <v-chip color="#efe9f3" class="overflow-x-auto mb-3" close>
+                <span>Idioma01</span>
+                <span class="px-3" style="color: #8000c7">|</span>
+                <span>B1</span>
+              </v-chip>
+              <br />
+              <v-chip color="#efe9f3" class="overflow-x-auto mb-3" close>
+                <span>Idioma01</span>
+                <span class="px-3" style="color: #8000c7">|</span>
+                <span>A1</span>
+              </v-chip>
+              <!-- <div class="chip-style">
                 <v-row>
                   <v-col cols="6" class="d-flex justify-space-between">
                     <div>
                       <div class="pt-1">Idioma01</div>
                     </div>
-                    <v-divider class="py-2" style="padding: 0 .5px" inset vertical color="#8000c7"></v-divider>
+                    <v-divider
+                      class="py-2 ml-2"
+                      style="padding: 0 .5px"
+                      inset
+                      vertical
+                      color="#8000c7"
+                    ></v-divider>
                   </v-col>
                   <v-col cols="6" class="d-flex justify-space-between">
                     <div>
@@ -134,7 +153,13 @@
                     <div>
                       <div class="pt-1">Idioma01</div>
                     </div>
-                    <v-divider class="py-2" style="padding: 0 .5px" inset vertical color="#8000c7"></v-divider>
+                    <v-divider
+                      class="py-2 ml-2"
+                      style="padding: 0 .5px"
+                      inset
+                      vertical
+                      color="#8000c7"
+                    ></v-divider>
                   </v-col>
                   <v-col cols="6" class="d-flex justify-space-between">
                     <div>
@@ -145,7 +170,7 @@
                     </v-btn>
                   </v-col>
                 </v-row>
-              </div>
+              </div>-->
             </div>
           </v-col>
         </v-row>
@@ -232,7 +257,9 @@ export default {
   background-color: #efe9f3;
   color: #7e7085;
   border-radius: 50px;
-  padding: 5px 20px;
+  padding: 5px 10px;
+  font-size: 12px;
   font-weight: bold;
+  width: max-content;
 }
 </style>

@@ -35,7 +35,9 @@
               </v-col>
             </v-row>
             <div class="mt-4">
-              <div class="chip-style">
+              <v-chip color="#efe9f3" class="overflow-x-auto mb-3" close>https://www.persona.com/cv</v-chip>
+              <v-chip color="#efe9f3" class="overflow-x-auto mb-3" close>https://www.persona.com/po</v-chip>
+              <!-- <div class="chip-style">
                 <v-row>
                   <v-col cols="10" class="d-flex justify-space-between">
                     <div>
@@ -62,7 +64,7 @@
                     </v-btn>
                   </v-col>
                 </v-row>
-              </div>
+              </div>-->
             </div>
           </v-col>
           <v-col cols="12" sm="6" :class="$vuetify.breakpoint.xs ? 'px-0' : 'pl-0'">
@@ -92,7 +94,17 @@
               </v-col>
             </v-row>
             <div class="mt-4">
-              <div class="chip-style">
+              <v-chip color="#efe9f3" class="overflow-x-auto mb-3" close>
+                <span>Red01</span>
+                <span class="px-3" style="color: #8000c7">|</span>
+                <span>Nombre usuario</span>
+              </v-chip>
+              <v-chip color="#efe9f3" class="overflow-x-auto mb-3" close>
+                <span>Red02</span>
+                <span class="px-3" style="color: #8000c7">|</span>
+                <span>Nombre usuario</span>
+              </v-chip>
+              <!-- <div class="chip-style">
                 <v-row>
                   <v-col cols="6" class="d-flex justify-space-between">
                     <div>
@@ -127,7 +139,7 @@
                     </v-btn>
                   </v-col>
                 </v-row>
-              </div>
+              </div>-->
             </div>
           </v-col>
         </v-row>
@@ -214,7 +226,9 @@ export default {
   background-color: #efe9f3;
   color: #7e7085;
   border-radius: 50px;
-  padding: 5px 20px;
+  padding: 5px 10px;
+  font-size: 12px;
   font-weight: bold;
+  width: max-content;
 }
 </style>
