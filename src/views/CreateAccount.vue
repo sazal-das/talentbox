@@ -203,6 +203,9 @@
         </v-col>
       </v-row>
     </div>
+    <div>
+      <FooterSection />
+    </div>
   </div>
 </template>
 
@@ -217,6 +220,7 @@ import StepSeven from "../components/StepSeven.vue";
 import StepEight from "../components/StepEight.vue";
 import StepNine from "../components/StepNine.vue";
 import StepTen from "../components/StepTen.vue";
+import FooterSection from "../components/FooterSection.vue";
 export default {
   name: "CreateAccount",
   data() {
@@ -251,6 +255,7 @@ export default {
     StepEight,
     StepNine,
     StepTen,
+    FooterSection,
   },
   created() {
     console.log("vuetify: ", this.$vuetify);
