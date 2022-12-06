@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import LoginView from "../views/LoginView.vue";
 import CreateAccount from "@/views/CreateAccount.vue";
+import NewCreateAccount from "@/views/NewCreateAccount.vue";
 
 Vue.use(VueRouter);
 
@@ -15,6 +16,11 @@ const routes = [
     path: "/create-account",
     name: "create-account",
     component: CreateAccount,
+  },
+  {
+    path: "/new-create-account",
+    name: "new-create-account",
+    component: NewCreateAccount,
   },
   {
     path: "/about",
