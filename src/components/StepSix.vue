@@ -75,12 +75,14 @@
               outlined
               v-model="form.jobTitle"
             ></v-text-field>
-            <div class="add-input mt-2">
-              <div style="color: #666666;">Salario actual o último salario</div>
-              <div class="mt-1">
-                <v-text-field prefix="$" dense hide-details color="purple" v-model="form.place"></v-text-field>
-              </div>
-            </div>
+            <v-text-field
+              class="mt-3"
+              hide-details
+              color="purple"
+              label="Salario actual o último salario"
+              outlined
+              v-model="form.email"
+            ></v-text-field>
             <div class="dollar-input mt-2">
               <div class="d-flex justify-space-between">
                 <div style="color: #666666;">Fechas</div>

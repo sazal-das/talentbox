@@ -16,82 +16,52 @@
         </v-row>
         <v-row class="pb-4">
           <v-col cols="12" sm="6" :class="$vuetify.breakpoint.xs ? 'px-0' : 'pl-0'">
-            <v-row>
-              <v-col cols="9">
-                <div class="add-input">
-                  <div style="color: #666666;">Enlaces</div>
-                  <div class="mt-1">
-                    <v-text-field dense hide-details color="purple" v-model="form.place"></v-text-field>
-                  </div>
-                </div>
-              </v-col>
-              <v-col cols="3">
+            <div class="d-flex justify-space-between">
+              <v-text-field
+                hide-details
+                color="purple"
+                label="Enlaces"
+                outlined
+                v-model="form.email"
+              ></v-text-field>
+              <div>
                 <div class="add-btn">
                   <v-btn small icon color="black">
                     <v-icon>mdi-plus</v-icon>
                   </v-btn>
                 </div>
-              </v-col>
-            </v-row>
+              </div>
+            </div>
             <div class="mt-4">
               <v-chip color="#efe9f3" class="overflow-x-auto mb-3" close>https://www.persona.com/cv</v-chip>
               <v-chip color="#efe9f3" class="overflow-x-auto mb-3" close>https://www.persona.com/po</v-chip>
-              <!-- <div class="chip-style">
-                <v-row>
-                  <v-col cols="10" class="d-flex justify-space-between">
-                    <div>
-                      <div class="pt-1">https://www.persona.com/cv</div>
-                    </div>
-                  </v-col>
-                  <v-col cols="2" class="text-right">
-                    <v-btn icon color="#8000c7">
-                      <v-icon>fa-solid fa-xmark</v-icon>
-                    </v-btn>
-                  </v-col>
-                </v-row>
-              </div>
-              <div class="chip-style mt-4">
-                <v-row>
-                  <v-col cols="10" class="d-flex justify-space-between">
-                    <div>
-                      <div class="pt-1">https://www.persona.com/po</div>
-                    </div>
-                  </v-col>
-                  <v-col cols="2" class="text-right">
-                    <v-btn icon color="#8000c7">
-                      <v-icon>fa-solid fa-xmark</v-icon>
-                    </v-btn>
-                  </v-col>
-                </v-row>
-              </div>-->
             </div>
           </v-col>
           <v-col cols="12" sm="6" :class="$vuetify.breakpoint.xs ? 'px-0' : 'pl-0'">
-            <v-row>
-              <v-col cols="5">
-                <div class="add-input">
-                  <div style="color: #666666;">Red social</div>
-                  <div class="mt-1">
-                    <v-text-field dense hide-details color="purple" v-model="form.languages"></v-text-field>
-                  </div>
-                </div>
-              </v-col>
-              <v-col cols="4">
-                <div class="add-input">
-                  <div style="color: #666666;">Usuario</div>
-                  <div class="mt-1">
-                    <v-text-field dense hide-details color="purple" v-model="form.level"></v-text-field>
-                  </div>
-                </div>
-              </v-col>
-              <v-col cols="3">
+            <div class="d-flex justify-space-between">
+              <v-text-field
+                hide-details
+                color="purple"
+                label="Red social"
+                outlined
+                v-model="form.email"
+              ></v-text-field>
+              <v-text-field
+                class="ml-3"
+                hide-details
+                color="purple"
+                label="Usuario"
+                outlined
+                v-model="form.email"
+              ></v-text-field>
+              <div>
                 <div class="add-btn">
                   <v-btn small icon color="black">
                     <v-icon>mdi-plus</v-icon>
                   </v-btn>
                 </div>
-              </v-col>
-            </v-row>
+              </div>
+            </div>
             <div class="mt-4">
               <v-chip color="#efe9f3" class="overflow-x-auto mb-3" close>
                 <span>Red01</span>
@@ -103,42 +73,6 @@
                 <span class="px-3" style="color: #8000c7">|</span>
                 <span>Nombre usuario</span>
               </v-chip>
-              <!-- <div class="chip-style">
-                <v-row>
-                  <v-col cols="6" class="d-flex justify-space-between">
-                    <div>
-                      <div class="pt-1">Red01</div>
-                    </div>
-                    <v-divider class="py-2" style="padding: 0 .5px" inset vertical color="#8000c7"></v-divider>
-                  </v-col>
-                  <v-col cols="6" class="d-flex justify-space-between">
-                    <div>
-                      <div class="pt-1">Nombre usuario</div>
-                    </div>
-                    <v-btn icon color="#8000c7">
-                      <v-icon>fa-solid fa-xmark</v-icon>
-                    </v-btn>
-                  </v-col>
-                </v-row>
-              </div>
-              <div class="chip-style mt-4">
-                <v-row>
-                  <v-col cols="6" class="d-flex justify-space-between">
-                    <div>
-                      <div class="pt-1">Red02</div>
-                    </div>
-                    <v-divider class="py-2" style="padding: 0 .5px" inset vertical color="#8000c7"></v-divider>
-                  </v-col>
-                  <v-col cols="6" class="d-flex justify-space-between">
-                    <div>
-                      <div class="pt-1">Nombre usuario</div>
-                    </div>
-                    <v-btn icon color="#8000c7">
-                      <v-icon>fa-solid fa-xmark</v-icon>
-                    </v-btn>
-                  </v-col>
-                </v-row>
-              </div>-->
             </div>
           </v-col>
         </v-row>
@@ -199,7 +133,8 @@ export default {
 }
 .add-btn {
   border: 1px dashed #9e9e9e;
-  padding: 20px 0;
+  padding: 14px;
+  margin-left: 10px;
   text-align: center;
   border-radius: 5px;
 }

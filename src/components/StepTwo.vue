@@ -16,12 +16,20 @@
         </v-row>
         <v-row class="pb-4">
           <v-col cols="12" sm="6" :class="$vuetify.breakpoint.xs ? 'px-0' : 'pl-0'">
-            <div class="large-input">
+            <!-- <div class="large-input">
               <div style="color: #666666;">Profesión u oficio</div>
               <div class="mt-1">
                 <v-text-field hide-details color="purple" v-model="form.profession"></v-text-field>
               </div>
-            </div>
+            </div>-->
+            <v-textarea
+              hide-details
+              color="purple"
+              label="Profesión u oficio"
+              outlined
+              class="input1"
+              v-model="form.email"
+            ></v-textarea>
           </v-col>
           <v-col cols="12" sm="6" :class="$vuetify.breakpoint.xs ? 'px-0' : 'pr-0'">
             <div class="dollar-input">
@@ -62,12 +70,19 @@
         <v-row class="pb-4">
           <v-col cols="12" sm="6" :class="$vuetify.breakpoint.xs ? 'px-0' : 'pl-0'">
             <div class="d-flex justify-space-between">
-              <div style="width: 100%" class="add-input">
+              <!-- <div style="width: 100%" class="add-input">
                 <div style="color: #666666;">Cargo a aplicar</div>
                 <div class="mt-1">
                   <v-text-field dense hide-details color="purple" v-model="form.charge"></v-text-field>
                 </div>
-              </div>
+              </div>-->
+              <v-text-field
+                hide-details
+                color="purple"
+                label="Correo electrónico"
+                outlined
+                v-model="form.email"
+              ></v-text-field>
               <div>
                 <div class="add-btn">
                   <v-btn small icon color="black">
@@ -95,12 +110,13 @@
           </v-col>
           <v-col cols="12" sm="6" :class="$vuetify.breakpoint.xs ? 'px-0' : 'pl-0'">
             <div class="d-flex justify-space-between">
-              <div style="width: 100%" class="add-input">
-                <div style="color: #666666;">Habilidades técnicas</div>
-                <div class="mt-1">
-                  <v-text-field dense hide-details color="purple" v-model="form.abilities"></v-text-field>
-                </div>
-              </div>
+              <v-text-field
+                hide-details
+                color="purple"
+                label="Habilidades técnicas"
+                outlined
+                v-model="form.email"
+              ></v-text-field>
               <div>
                 <div class="add-btn">
                   <v-btn small icon color="black">
@@ -151,6 +167,10 @@ export default {
 
 <style scoped lang="scss">
 ::v-deep {
+  // .input1 .v-input input:focus,
+  // .v-input input {
+  //   padding: 58px 4px;
+  // }
   .v-text-field.v-text-field--solo:not(.v-text-field--solo-flat)
     > .v-input__control
     > .v-input__slot {
@@ -177,13 +197,13 @@ export default {
   border: 1px solid #9e9e9e;
 }
 .dollar-input {
-  padding: 18px 15px;
+  padding: 35px 15px;
   border-radius: 5px;
   border: 1px solid #9e9e9e;
 }
 .add-btn {
   border: 1px dashed #9e9e9e;
-  padding: 20px;
+  padding: 14px;
   margin-left: 10px;
   text-align: center;
   border-radius: 5px;
