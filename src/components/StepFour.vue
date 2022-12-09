@@ -59,7 +59,6 @@
                         <div>ultrices, magna tortor feugiat dolor,</div>vel laoreet nisi ligula sed ante.
                       </div>
                     </v-tooltip>
-                    <!-- <i class="fa-solid fa-circle-exclamation fa-lg"></i> -->
                   </div>
                 </div>
                 <div>

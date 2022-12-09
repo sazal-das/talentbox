@@ -16,12 +16,6 @@
         </v-row>
         <v-row class="pb-4">
           <v-col cols="12" sm="6" :class="$vuetify.breakpoint.xs ? 'px-0' : 'pl-0'">
-            <!-- <div class="large-input">
-              <div style="color: #666666;">Profesión u oficio</div>
-              <div class="mt-1">
-                <v-text-field hide-details color="purple" v-model="form.profession"></v-text-field>
-              </div>
-            </div>-->
             <v-textarea
               hide-details
               color="purple"
@@ -35,9 +29,24 @@
             <div class="dollar-input">
               <div class="d-flex justify-space-between">
                 <div style="color: #666666;">Expectativa salarial</div>
-                <v-btn elevation="0" fab dark x-small color="grey darken-3">
-                  <v-icon x-small dark>fa-solid fa-question</v-icon>
-                </v-btn>
+                <v-tooltip
+                  bottom
+                  color="white"
+                  class="black--text"
+                  style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; opacity: 0%;"
+                >
+                  <template v-slot:activator="{ on, attrs }">
+                    <v-btn x-small icon color="#535353" v-bind="attrs" v-on="on">
+                      <v-icon>fa-solid fa-circle-question fa-xl</v-icon>
+                    </v-btn>
+                  </template>
+                  <div
+                    class="black--text pa-4 rounded-lg"
+                    style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; width: 450px;"
+                  >
+                    <apexchart type="bar" height="350" :options="chartOptions" :series="series"></apexchart>
+                  </div>
+                </v-tooltip>
               </div>
               <v-row class="mt-1">
                 <v-col cols="6" class="d-flex">
@@ -70,12 +79,6 @@
         <v-row class="pb-4">
           <v-col cols="12" sm="6" :class="$vuetify.breakpoint.xs ? 'px-0' : 'pl-0'">
             <div class="d-flex justify-space-between">
-              <!-- <div style="width: 100%" class="add-input">
-                <div style="color: #666666;">Cargo a aplicar</div>
-                <div class="mt-1">
-                  <v-text-field dense hide-details color="purple" v-model="form.charge"></v-text-field>
-                </div>
-              </div>-->
               <v-text-field
                 hide-details
                 color="purple"
@@ -94,18 +97,6 @@
             <div class="mt-2 d-flex">
               <v-chip color="#efe9f3" class="overflow-x-auto mb-3 mr-1" close>Cargo01</v-chip>
               <v-chip color="#efe9f3" class="overflow-x-auto mb-3 mr-1" close>Cargo02</v-chip>
-              <!-- <div class="chip-style d-flex mr-2">
-                <div class="pt-1">Cargo01</div>
-                <v-btn class="ml-3 mt-1" x-small icon color="#8000c7">
-                  <v-icon>fa-solid fa-xmark</v-icon>
-                </v-btn>
-              </div>
-              <div class="chip-style d-flex mr-2">
-                <div class="pt-1">Cargo02</div>
-                <v-btn class="ml-3 mt-1" x-small icon color="#8000c7">
-                  <v-icon>fa-solid fa-xmark</v-icon>
-                </v-btn>
-              </div>-->
             </div>
           </v-col>
           <v-col cols="12" sm="6" :class="$vuetify.breakpoint.xs ? 'px-0' : 'pl-0'">
@@ -128,18 +119,6 @@
             <div class="mt-2 d-flex">
               <v-chip color="#efe9f3" class="overflow-x-auto mb-3 mr-1" close>Habilidad01</v-chip>
               <v-chip color="#efe9f3" class="overflow-x-auto mb-3 mr-1" close>Habilidad02</v-chip>
-              <!-- <div class="chip-style d-flex mr-2">
-                <div class="pt-1">Habilidad01</div>
-                <v-btn class="ml-3 mt-1" x-small icon color="#8000c7">
-                  <v-icon>fa-solid fa-xmark</v-icon>
-                </v-btn>
-              </div>
-              <div class="chip-style d-flex mr-2">
-                <div class="pt-1">Habilidad02</div>
-                <v-btn class="ml-3 mt-1" x-small icon color="#8000c7">
-                  <v-icon>fa-solid fa-xmark</v-icon>
-                </v-btn>
-              </div>-->
             </div>
           </v-col>
         </v-row>
@@ -149,6 +128,11 @@
 </template>
 
 <script>
+import Vue from "vue";
+import VueApexCharts from "vue-apexcharts";
+Vue.use(VueApexCharts);
+// eslint-disable-next-line vue/multi-word-component-names
+Vue.component("apexchart", VueApexCharts);
 export default {
   data() {
     return {
@@ -159,6 +143,59 @@ export default {
         maxSalary: "",
         charge: "",
         abilities: "",
+      },
+      series: [
+        {
+          data: [5, 10, 15, 20, 18, 25, 15, 5, 3],
+        },
+      ],
+      chartOptions: {
+        chart: {
+          height: 350,
+          type: "bar",
+        },
+        colors: [
+          "#CAB8E5",
+          "#CAB8E5",
+          "#CAB8E5",
+          "#CAB8E5",
+          "#8B10D2",
+          "#CAB8E5",
+          "#CAB8E5",
+          "#CAB8E5",
+          "#CAB8E5",
+        ],
+        plotOptions: {
+          bar: {
+            columnWidth: "25%",
+            distributed: true,
+          },
+        },
+        dataLabels: {
+          enabled: false,
+        },
+        legend: {
+          show: false,
+        },
+        xaxis: {
+          categories: [
+            "$2,000,000",
+            "",
+            "",
+            "",
+            "$5,000,000",
+            "",
+            "",
+            "",
+            "$10,000,000",
+          ],
+          labels: {
+            style: {
+              colors: "black",
+              fontSize: "12px",
+            },
+          },
+        },
       },
     };
   },
