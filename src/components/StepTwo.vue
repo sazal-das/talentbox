@@ -44,6 +44,9 @@
                     class="black--text pa-4 rounded-lg"
                     style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; width: 450px;"
                   >
+                    <div
+                      class="text-center font-weight-bold"
+                    >Salario promedio en tu profesion u oficio</div>
                     <apexchart type="bar" height="350" :options="chartOptions" :series="series"></apexchart>
                   </div>
                 </v-tooltip>
