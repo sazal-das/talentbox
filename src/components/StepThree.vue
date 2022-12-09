@@ -70,13 +70,12 @@
         </v-row>
         <v-row class="pb-4">
           <v-col cols="12" class="px-0">
-            <v-text-field
-              hide-details
-              color="purple"
-              label="Empleo actual, ofertas…"
-              solo
-              v-model="form.currentEmployment"
-            ></v-text-field>
+            <div
+              @click="$emit('onClickNext')"
+              v-ripple
+              class="text-left elevation-2 pa-4 rounded-lg"
+              style="cursor: pointer; color: #9F9F9F"
+            >Empleo actual, ofertas…</div>
           </v-col>
         </v-row>
       </v-form>

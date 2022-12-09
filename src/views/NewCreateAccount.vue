@@ -97,16 +97,16 @@
             <v-tabs-items v-model="tab">
               <v-tab-item v-for="item in items" :key="item">
                 <div class="form-container">
-                  <step-one v-if="step===1" />
-                  <StepTwo v-if="step===2" />
-                  <StepThree v-if="step===3" />
-                  <StepFour v-if="(step===4)" />
+                  <step-one v-if="step===1" @onClickNext="onClickNext()" />
+                  <StepTwo v-if="step===2" @onClickBack="onClickBack()" />
+                  <StepThree v-if="step===3" @onClickNext="onClickNext()" />
+                  <StepFour v-if="(step===4)" @onClickBack="onClickBack()" />
                   <StepFive v-if="(step===5)" />
                   <StepSix v-if="(step===6)" />
                   <StepSeven v-if="(step===7)" />
                   <StepEight v-if="(step===8)" />
-                  <StepNine v-if="(step===9)" />
-                  <StepTen v-if="(step===10)" />
+                  <StepNine v-if="(step===9)" @onClickNext="onClickNext()" />
+                  <StepTen v-if="(step===10)" @onClickBack="onClickBack()" />
                 </div>
               </v-tab-item>
             </v-tabs-items>

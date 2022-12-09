@@ -103,13 +103,12 @@
         </div>
         <v-row class="pb-4 mt-3">
           <v-col cols="12" :class="$vuetify.breakpoint.xs ? 'px-0' : 'pl-0'">
-            <v-text-field
-              hide-details
-              color="purple"
-              label="Enlaces, redes sociales…"
-              solo
-              v-model="form.residence"
-            ></v-text-field>
+            <div
+              @click="$emit('onClickNext')"
+              v-ripple
+              class="text-left elevation-2 pa-4 rounded-lg"
+              style="cursor: pointer; color: #9F9F9F"
+            >Enlaces, redes sociales…</div>
           </v-col>
         </v-row>
       </v-form>

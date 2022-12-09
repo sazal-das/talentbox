@@ -6,13 +6,12 @@
       <v-form ref="form" v-model="valid" lazy-validation>
         <v-row class="pb-4">
           <v-col cols="12" :class="$vuetify.breakpoint.xs ? 'px-0' : 'pl-0'">
-            <v-text-field
-              hide-details
-              color="purple"
-              label="Foto de perfil, sobre mi, género, medio de transporte…"
-              solo
-              v-model="form.residence"
-            ></v-text-field>
+            <div
+              @click="$emit('onClickBack')"
+              v-ripple
+              class="text-left elevation-2 pa-4 rounded-lg"
+              style="cursor: pointer; color: #9F9F9F"
+            >Foto de perfil, sobre mi, género, medio de transporte…</div>
           </v-col>
         </v-row>
         <v-row class="pb-4">
