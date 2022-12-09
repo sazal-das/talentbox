@@ -61,23 +61,21 @@
         </v-row>
         <v-row class="pb-4">
           <v-col cols="12" sm="6" :class="$vuetify.breakpoint.xs ? 'px-0' : 'pl-0'">
-            <v-row>
-              <v-col cols="9">
-                <div class="add-input">
-                  <div style="color: #666666;">Cargo a aplicar</div>
-                  <div class="mt-1">
-                    <v-text-field dense hide-details color="purple" v-model="form.charge"></v-text-field>
-                  </div>
+            <div class="d-flex justify-space-between">
+              <div style="width: 100%" class="add-input">
+                <div style="color: #666666;">Cargo a aplicar</div>
+                <div class="mt-1">
+                  <v-text-field dense hide-details color="purple" v-model="form.charge"></v-text-field>
                 </div>
-              </v-col>
-              <v-col cols="3">
+              </div>
+              <div>
                 <div class="add-btn">
                   <v-btn small icon color="black">
                     <v-icon>mdi-plus</v-icon>
                   </v-btn>
                 </div>
-              </v-col>
-            </v-row>
+              </div>
+            </div>
             <div class="mt-2 d-flex">
               <v-chip color="#efe9f3" class="overflow-x-auto mb-3 mr-1" close>Cargo01</v-chip>
               <v-chip color="#efe9f3" class="overflow-x-auto mb-3 mr-1" close>Cargo02</v-chip>
@@ -96,23 +94,21 @@
             </div>
           </v-col>
           <v-col cols="12" sm="6" :class="$vuetify.breakpoint.xs ? 'px-0' : 'pl-0'">
-            <v-row>
-              <v-col cols="9">
-                <div class="add-input">
-                  <div style="color: #666666;">Habilidades técnicas</div>
-                  <div class="mt-1">
-                    <v-text-field dense hide-details color="purple" v-model="form.abilities"></v-text-field>
-                  </div>
+            <div class="d-flex justify-space-between">
+              <div style="width: 100%" class="add-input">
+                <div style="color: #666666;">Habilidades técnicas</div>
+                <div class="mt-1">
+                  <v-text-field dense hide-details color="purple" v-model="form.abilities"></v-text-field>
                 </div>
-              </v-col>
-              <v-col cols="3">
+              </div>
+              <div>
                 <div class="add-btn">
                   <v-btn small icon color="black">
                     <v-icon>mdi-plus</v-icon>
                   </v-btn>
                 </div>
-              </v-col>
-            </v-row>
+              </div>
+            </div>
             <div class="mt-2 d-flex">
               <v-chip color="#efe9f3" class="overflow-x-auto mb-3 mr-1" close>Habilidad01</v-chip>
               <v-chip color="#efe9f3" class="overflow-x-auto mb-3 mr-1" close>Habilidad02</v-chip>
@@ -188,6 +184,7 @@ export default {
 .add-btn {
   border: 1px dashed #9e9e9e;
   padding: 20px;
+  margin-left: 10px;
   text-align: center;
   border-radius: 5px;
 }
