@@ -2,7 +2,7 @@
 <template>
   <div class="page-container">
     <v-row no-gutters>
-      <v-col style="background: white;" cols="12" sm="12" md="5">
+      <v-col style="background: white; min-height: 100vh;" cols="12" sm="12" md="5">
         <v-container class="left-container fill-height">
           <div style="position: absolute; top: 20px">
             <img style="width: 120px" src="/images/icon1.png" />
@@ -10,7 +10,7 @@
           </div>
           <div class="mx-auto">
             <h1 class="header-text text-center">Usar Talentbox es</h1>
-            <div class="text-center text-body-1" style="padding-bottom: 40px; padding-top: 20px;">
+            <div class="text-center text-body-1" style="padding-bottom: 40px; padding-top: 20px">
               <div>Fusce dictum dui turpis, et faucibus magn</div>
               <div>malesuada eget. Suspendisse ut risus mauris.</div>
             </div>
@@ -20,13 +20,13 @@
               cycle
               height="400"
               hide-delimiter-background
-              style="max-width: 440px; margin: 0 auto;"
+              style="max-width: 440px; margin: 0 auto"
               :show-arrows="false"
             >
-              <v-carousel-item v-for="(item,i) in items" :key="i" :src="item.src"></v-carousel-item>
+              <v-carousel-item v-for="(item, i) in items" :key="i" :src="item.src"></v-carousel-item>
             </v-carousel>
           </v-row>
-          <div style="position: absolute; bottom: 20px;">
+          <div style="position: absolute; bottom: 20px">
             <v-btn icon color="white" class="mr-5">
               <v-icon>fa-brands fa-twitter</v-icon>
             </v-btn>
@@ -102,18 +102,19 @@
             </v-tabs-items>
           </div>
           <div
-            class="text-right"
+            class="text-right pt-md"
             :style="$vuetify.breakpoint.height < 800 ? '' : 'position: absolute; bottom: 20px; right: 40px;'"
           >© 2022 Talentbox</div>
         </div>
       </v-col>
     </v-row>
+    <footer-section-vue />
   </div>
 </template>
 
 <script>
+import FooterSectionVue from "@/components/FooterSection.vue";
 export default {
-  name: "LoginPage",
   data() {
     return {
       items: [
@@ -133,8 +134,8 @@ export default {
       valid: true,
     };
   },
-  created() {
-    console.log("vuetify: ", this.$vuetify);
+  components: {
+    FooterSectionVue,
   },
 };
 </script>
@@ -149,7 +150,7 @@ export default {
 .page-container {
   background-color: #c0b4e3;
   font-family: "Montserrat", sans-serif;
-  height: 100vh;
+  min-height: 100vh;
   color: white;
   /* padding: 30px; */
 }
@@ -163,7 +164,7 @@ export default {
 .right-container {
   border-top-left-radius: 60px;
   background-color: white;
-  height: 100vh;
+  min-height: 100vh;
   padding: 30px;
   color: black;
   position: relative;
