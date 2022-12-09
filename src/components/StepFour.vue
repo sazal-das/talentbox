@@ -38,7 +38,28 @@
                 <div class="d-flex">
                   <div style="color: #666666;">Permiso de trabajo</div>
                   <div class="ml-5">
-                    <i class="fa-solid fa-circle-exclamation fa-lg"></i>
+                    <v-tooltip
+                      bottom
+                      color="white"
+                      class="black--text"
+                      style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;"
+                    >
+                      <template v-slot:activator="{ on, attrs }">
+                        <v-btn x-small icon color="#535353" v-bind="attrs" v-on="on">
+                          <v-icon>fa-solid fa-circle-exclamation fa-lg</v-icon>
+                        </v-btn>
+                      </template>
+                      <div
+                        class="black--text pa-4 rounded-lg"
+                        style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;"
+                      >
+                        <div>Donec sem sapien, fermentum a</div>
+                        <div>consequat vitae, iaculis ut quam.</div>
+                        <div>Aliquam faucibus, ligula at aliquet</div>
+                        <div>ultrices, magna tortor feugiat dolor,</div>vel laoreet nisi ligula sed ante.
+                      </div>
+                    </v-tooltip>
+                    <!-- <i class="fa-solid fa-circle-exclamation fa-lg"></i> -->
                   </div>
                 </div>
                 <div>
