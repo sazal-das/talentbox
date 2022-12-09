@@ -10,6 +10,7 @@
           color="white"
           class="text-capitalize px-6 py-1 font-weight-bold"
           rounded
+          @click="dialog=true"
         >Ver estudios</v-btn>
       </div>
     </div>
@@ -90,7 +91,6 @@
             color="white"
             class="text-capitalize px-4 py-2 font-weight-bold"
             rounded
-            @click="dialog=true"
           >
             Añadir más estudios
             <v-icon color="purple" right dark>mdi-plus</v-icon>

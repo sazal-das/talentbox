@@ -107,7 +107,6 @@
                 color="white"
                 class="text-capitalize px-4 py-2 font-weight-bold"
                 rounded
-                @click="dialog=true"
               >
                 Añadir más experiencia
                 <v-icon color="purple" right dark>mdi-plus</v-icon>
