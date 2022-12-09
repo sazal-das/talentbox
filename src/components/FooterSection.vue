@@ -6,13 +6,10 @@
         <v-col cols="4" sm="5" md="2" class="text-center">
           <img src="/images/servicio-de-empleo-color.png" />
         </v-col>
-        <v-col
-          cols="8"
-          sm="7"
-          md="6"
-          class="text-center"
-          style="color: #999999"
-        >Vinculado a la red de prestadores del Servicio Público de Empleo. Autorizado por la Unidad Administrativa</v-col>
+        <v-col cols="8" sm="7" md="6" class="text-center" style="color: #999999">
+          <div>Vinculado a la red de prestadores del Servicio Público de Empleo. Autorizado por la Unidad Administrativa</div>
+          <div>Especial del Servicio Público de Empleo según resolución No. 000382 del 2020.</div>
+        </v-col>
         <v-col cols="6" sm="6" md="2" class="text-center">
           <img src="/images/innpulsa.png" />
         </v-col>
