@@ -77,7 +77,7 @@
               v-model="form.jobTitle"
             ></v-text-field>
             <v-text-field
-              class="mt-3"
+              style="margin-top: 37px;"
               hide-details
               color="purple"
               label="Salario actual o último salario"
