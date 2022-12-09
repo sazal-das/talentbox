@@ -93,7 +93,6 @@
                   <v-text-field
                     class="pl-2"
                     dense
-                    prefix="Fec"
                     hide-details
                     color="purple"
                     v-model="form.minSalary"
@@ -105,7 +104,6 @@
                   <v-text-field
                     class="pl-2"
                     dense
-                    prefix="Fec"
                     hide-details
                     color="purple"
                     v-model="form.maxSalary"

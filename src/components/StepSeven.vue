@@ -58,7 +58,6 @@
                   <v-text-field
                     class="pl-2"
                     dense
-                    prefix="Fec"
                     hide-details
                     color="purple"
                     v-model="form.initial"
@@ -67,14 +66,7 @@
                 <v-divider inset vertical></v-divider>
                 <v-col cols="6" class="d-flex">
                   <span style="color: #666666;">Final</span>
-                  <v-text-field
-                    class="pl-2"
-                    dense
-                    prefix="Fec"
-                    hide-details
-                    color="purple"
-                    v-model="form.final"
-                  ></v-text-field>
+                  <v-text-field class="pl-2" dense hide-details color="purple" v-model="form.final"></v-text-field>
                 </v-col>
               </v-row>
             </div>
